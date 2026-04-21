@@ -23,6 +23,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"message": "AskDocs AI backend is running"}
 
 @app.get("/health", response_model=HealthResponse)
 def health_check():
